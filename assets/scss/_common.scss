@@ -1,0 +1,15 @@
+body {
+    margin: 0 auto;
+    padding: 0;
+    font-size: $font-size;
+    max-width: 576px;
+}
+
+a {
+    color: darken($color: $color-blue, $amount: 15%);
+    text-decoration: none;
+}
+
+button {
+    color: $color-light;
+}

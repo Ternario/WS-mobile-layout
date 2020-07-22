@@ -1,0 +1,135 @@
+.header {
+    
+    .header-navbar {
+        display: flex;
+        
+        &__menu {
+            position: relative;
+            text-align: center;
+            padding: $gap / 1.5 0;
+            width: 25%;
+            font-size: .7rem;
+            color: $color-light;
+            background-color: lighten($color: $color-gray-white, $amount:30%);
+            border: 1px solid $color-gray-white;
+
+            .wrapper-left {
+                left: 0;
+
+                @extend %wrappers;
+
+                .item-first {
+                    @extend %item-first;
+                    
+                    .wrapper-secondLeft {
+                        left: 100%;
+                        
+                        @extend %wrapper-second; 
+
+                        .item-second {
+                            @extend %item-second; 
+                        }
+
+                        .item-second:hover {
+                            a {
+                                color: $color-yellow;
+                            }
+                        }
+
+                        .item-second:last-child {
+                            @extend %border-bottom;
+                        }
+                    }
+                }
+
+                .item-first:last-child{
+                    @extend %border-bottom;
+                }
+
+                .item-first:hover {
+
+                    .menu-item {
+                        color: $color-yellow;
+                    }
+
+                    .wrapper-secondLeft {
+                        @extend %item-first__hover;
+                    }
+                }
+            }
+
+            .wrapper-right {
+                right: 0;
+
+                @extend %wrappers;
+
+                .item-first {
+                    @extend %item-first;
+                    
+                    .wrapper-secondRight {
+                        right: 100%;
+
+                        @extend %wrapper-second; 
+
+                        .item-second {
+                            @extend %item-second; 
+                        }
+
+                        .item-second:hover {
+                            a {
+                                color: $color-yellow;
+                            }
+                        }
+
+                        .item-second:last-child {
+                            @extend %border-bottom;
+                        }
+                    }
+                }
+
+                .item-first:last-child{
+                    @extend %border-bottom;
+                }
+
+                .item-first:hover {
+
+                    .menu-item {
+                        color: $color-yellow;
+                    }
+
+                    .wrapper-secondRight {
+                        @extend %item-first__hover;
+                    }
+                }
+            }
+        }
+
+        &__menu:hover {
+
+            .menu {
+                color: $color-yellow;
+            }
+
+            .wrapper-left,
+            .wrapper-right {
+                @extend %item-first__hover;
+            }
+        }
+    }
+
+    .header-image {
+        height: 250px;
+        width: 100%;
+        background-image: url("https://www.stemcellclinic.com/wp-content/uploads/2019/07/photo_2019-07-11_13-18-41.jpg");
+        background-position: 50% 50%;
+        background-size: cover;
+
+        @include lg-md {
+            height: 350px;
+        }
+
+        @include md-sm {
+            height: 350px;
+        }
+    }
+}

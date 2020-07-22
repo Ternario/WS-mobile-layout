@@ -1,0 +1,72 @@
+.footer {
+    padding: $gap;
+    background-color: lighten($color: $color-gray-white, $amount:30%);
+
+    .footer-header {
+        position: relative;
+
+        .footer-text {
+            text-align: center;
+            margin: $gap / 2 0;
+            padding: $gap / 2;
+            font-size: .7rem;
+            background-color: $color-light;
+            border-radius: 10px;
+
+            @include lg-md{
+                font-size: .9rem;
+            }
+        }
+    }
+
+    .footer-header::before {
+        content: "";
+        position: absolute;
+        top: -10px;
+        height: 1px;
+        width: 100%;
+        background-color: $color-black;
+    }
+
+    .carousel-item {
+        border: 1px solid $color-black;
+        
+        .slider {
+            height: 200px;
+
+            @include lg-md{
+                height: 300px;
+            }
+
+            @include md-sm {
+                height: 300px;
+            }
+        }
+    }
+
+    .carousel-item::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        opacity: .6;
+        background-color: $color-black;
+    }
+
+    .footer-label {
+
+        .label {
+            margin: $gap / 2 0;
+            padding: $gap / 2;
+            font-size: .7rem;
+            background-color: $color-light;
+            border-radius: 10px;
+
+            @include lg-md{
+                font-size: .9rem;
+            }
+        }
+    }
+}

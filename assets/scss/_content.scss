@@ -1,0 +1,240 @@
+.main {
+    padding-top: $gap;
+    background-color: lighten($color: $color-gray-white, $amount:30%);
+
+    .container {
+        display: flex;
+        flex-flow: column wrap;
+        align-content: space-between;
+        padding: 0 $gap / 3;
+        height: 1050px;
+
+        .section:nth-child(2n+1) { order: 1; }
+        .section:nth-child(2n+2) { order: 2; }
+        .section:nth-child(2n)   { order: 3; }
+        
+
+        @include lg-md{
+            height: 1050px;
+            .section:nth-child(3n+1) { order: 1; }
+            .section:nth-child(3n+2) { order: 2; }
+            .section:nth-child(3n)   { order: 3; }
+        }
+
+        @include md-sm{
+            height: 1160px;
+            .section:nth-child(2n+1) { order: 1; }
+            .section:nth-child(2n+2) { order: 2; }
+            .section:nth-child(2n)   { order: 3; }
+        }
+        
+        @include sm {
+            height: 1300px;
+            .section:nth-child(2n+1) { order: 1; }
+            .section:nth-child(2n+2) { order: 2; }
+            .section:nth-child(2n)   { order: 3; }
+        }
+
+        .section {
+            margin: $gap / 2 auto;
+            padding: $gap / 3;
+            width: 48%;
+            background-color: $color-light;
+            border-radius: 5px;
+            overflow: hidden;
+
+            @include lg-md{
+                width: 32%;
+            }
+
+            @include md-sm {
+                width: 48%;
+            }
+
+            .section-header {
+                margin-bottom: $gap / 3;
+
+                @include lg-md{
+                    margin-bottom: $gap / 2;
+                }
+
+                &__wrapper {
+                    display: flex;
+
+                    .wrapper-image {
+                        height: 50px;
+                        width: 40%;
+                        border-radius: 5px;
+                        overflow: hidden;
+
+                        @include lg-md{
+                            height: 70px;
+                        }
+
+                        @include md-sm {
+                            height: 70px;
+                        }
+
+                        .image {
+                            width: 100%;
+                        }
+                    }
+
+                    .wrapper-items {
+                        margin-left: $gap / 3;
+                        width: 60%;
+                        text-align: center;
+
+                        &__messages {
+                            margin-bottom: $gap / 4;
+                            font-size: .55rem;
+
+                            @include lg-md{
+                                font-size: .7rem;
+                            }
+
+                            @include md-sm {
+                                font-size: .6rem;
+                            }
+                        }
+
+                        &__rating {
+                            padding: 0 $gap / 3;
+                            display: flex;
+                            justify-content: space-between;
+
+                            .rating-label {
+                                font-size: .55rem;
+
+                                @include lg-md{
+                                    font-size: .7rem;
+                                }
+
+                                @include md-sm {
+                                    font-size: .6rem;
+                                }
+                            }
+
+                            .rating-value {
+                                font-size: .55rem;
+
+                                @include lg-md{
+                                    font-size: .7rem;
+                                }
+
+                                @include md-sm {
+                                    font-size: .6rem;
+                                }
+                            }
+                        }
+
+                        &__button {
+                            padding: $gap / 4;
+                            font-size: .45rem;
+                            background-color: lighten($color: $color-gray-white, $amount:30%);
+                            border-radius: 5px;
+                            border: none;
+
+                            @include lg-md{
+                                font-size: .7rem;
+                            }
+
+                            @include md-sm {
+                                font-size: .6rem;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .section-main {
+                text-align: center;
+
+                @include lg-md{
+                    margin-bottom: $gap / 2;
+                }
+
+                &__wrapper {
+
+                    .wrapper-name {
+                        font-size: .8rem;
+                    }
+
+                    .wrapper-position {
+                        font-size: .7rem;
+                        margin-bottom: $gap / 3;
+                    }
+
+                    .wrapper-search {
+                        position: relative;
+                        padding: 0 $gap / 2;
+                        display: flex;
+                        justify-content: space-between;
+
+                        &__label {
+                            font-size: .7rem;
+                        }
+                    }
+
+                    .wrapper-search::after {
+                        content: "";
+                        position: absolute;
+                        height: 1px;
+                        width: 95%;
+                        left: 4px;
+                        bottom: 0px;
+                        background-color: lighten($color: $color-gray-white, $amount:30%);
+
+                        @include lg-md{
+                            bottom: -5px;
+                        }
+                    }
+                }
+            }
+
+            .section-footer {
+                text-align: center;
+
+                &__name {
+
+                    @include lg-md{
+                        display: flex;
+                        justify-content: space-between;
+                    }
+
+                    @include md-sm{
+                        display: flex;
+                        justify-content: space-between;
+                    }
+
+                    .name-label {
+                        font-size: .8rem;
+                    }
+
+                    .name-link {
+                        font-size: .8rem;
+                    }
+                }
+
+                &__addres {
+
+                    .addres-label {
+                        font-size: .8rem;
+                    }
+
+                    .addres-name {
+                        font-size: .8rem;
+                    }
+                }
+            }
+        }
+    }
+
+    .container::before,
+    .container::after {
+        content: "";
+        flex-basis: 100%;
+        width: 0;
+        order: 2;
+    }
+}
